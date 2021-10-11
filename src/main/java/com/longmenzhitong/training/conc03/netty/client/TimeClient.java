@@ -1,5 +1,6 @@
-package com.longmenzhitong.training.conc03.netty;
+package com.longmenzhitong.training.conc03.netty.client;
 
+import com.longmenzhitong.training.conc03.netty.decoder.TimeDecoder;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;

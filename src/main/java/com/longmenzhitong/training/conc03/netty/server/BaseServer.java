@@ -1,11 +1,13 @@
-package com.longmenzhitong.training.conc03.netty;
+package com.longmenzhitong.training.conc03.netty.server;
 
+import com.longmenzhitong.training.conc03.netty.filter.IpFilterRuleHandler;
 import com.longmenzhitong.training.conc03.netty.pojo.TimeEncoder;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.ipfilter.RuleBasedIpFilter;
 
 public abstract class BaseServer {
 
@@ -29,7 +31,8 @@ public abstract class BaseServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) {
-                            ch.pipeline().addLast(new TimeEncoder(), getServerHandler());
+                            ch.pipeline().addLast(new RuleBasedIpFilter(new IpFilterRuleHandler()),
+                                    new TimeEncoder(), getServerHandler());
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)

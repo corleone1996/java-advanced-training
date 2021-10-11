@@ -1,4 +1,4 @@
-package com.longmenzhitong.training.conc03.netty;
+package com.longmenzhitong.training.conc03.netty.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

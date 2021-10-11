@@ -1,16 +1,16 @@
-package com.longmenzhitong.training.conc03.netty;
+package com.longmenzhitong.training.conc03.netty.server;
 
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-public class TimeServer extends BaseServer {
+public class DiscardServer extends BaseServer {
 
-    public TimeServer(int port) {
+    public DiscardServer(int port) {
         super(port);
     }
 
     @Override
     protected ChannelInboundHandlerAdapter getServerHandler() {
-        return new TimeServerHandler();
+        return new DiscardServerHandler();
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -19,6 +19,6 @@ public class TimeServer extends BaseServer {
             port = Integer.parseInt(args[0]);
         }
 
-        new TimeServer(port).run();
+        new DiscardServer(port).run();
     }
 }

@@ -1,4 +1,4 @@
-package com.longmenzhitong.training.conc03.netty;
+package com.longmenzhitong.training.conc03.netty.decoder;
 
 import com.longmenzhitong.training.conc03.netty.pojo.UnixTime;
 import io.netty.buffer.ByteBuf;

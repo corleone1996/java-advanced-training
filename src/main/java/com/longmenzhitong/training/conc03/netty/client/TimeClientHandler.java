@@ -1,4 +1,4 @@
-package com.longmenzhitong.training.conc03.netty;
+package com.longmenzhitong.training.conc03.netty.client;
 
 import com.longmenzhitong.training.conc03.netty.pojo.UnixTime;
 import io.netty.channel.ChannelHandlerContext;
