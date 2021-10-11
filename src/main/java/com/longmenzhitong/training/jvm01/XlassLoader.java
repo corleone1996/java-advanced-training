@@ -1,4 +1,4 @@
-package com.longmenzhitong.training.jvm;
+package com.longmenzhitong.training.jvm01;
 
 import com.longmenzhitong.training.util.FileReader;
 import java.io.IOException;
