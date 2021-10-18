@@ -6,20 +6,16 @@ import lombok.extern.slf4j.Slf4j;
  * Test02
  */
 @Slf4j
-public class Test02 {
+public class Test03 {
 
     static volatile Integer ran;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         log.info("主线程启动");
 
-        new Thread(() -> {
-            ran = new Generator().gen();
-        }).start();
-
-        while (ran == null) {
-            // 等子线程处理完成
-        }
+        Thread t = new Thread(() -> ran = new Generator().gen());
+        t.start();
+        t.join();
 
         log.info("生成随机数：{}", ran);
 
